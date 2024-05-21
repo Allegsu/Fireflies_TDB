@@ -5,6 +5,7 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.table.DefaultTableModel;
+import javax.tools.Tool;
 
 public class firefliesGUI extends JFrame implements ActionListener {
     // Creating Buttons
@@ -32,6 +33,10 @@ public class firefliesGUI extends JFrame implements ActionListener {
         checkInBtn.setForeground(Color.WHITE);
         checkInBtn.setBackground(Color.BLACK);
         add(checkInBtn);
+        //Custom Cursor 
+        Image cursorImageCI = new ImageIcon(getClass().getResource("/images/checkincur.png")).getImage();
+        Cursor customCursorCI = Toolkit.getDefaultToolkit().createCustomCursor(cursorImageCI, new Point(0,0), "cursorImageCI");
+        checkInBtn.setCursor(customCursorCI);
 
         checkOutBtn = new JButton("Check Out");
         checkOutBtn.setBounds(50, 80, 120, 30);
@@ -40,6 +45,10 @@ public class firefliesGUI extends JFrame implements ActionListener {
         checkOutBtn.setForeground(Color.WHITE);
         checkOutBtn.setBackground(Color.BLACK);
         add(checkOutBtn);
+        //Custom Cursor
+        Image cursorImageCO = new ImageIcon(getClass().getResource("/images/EllieC.png")).getImage();
+        Cursor customCursorCO = Toolkit.getDefaultToolkit().createCustomCursor(cursorImageCO, new Point(0,0), "cursorImageCO");
+        checkOutBtn.setCursor(customCursorCO);
 
         regBtn = new JButton("Sign In");
         regBtn.setBounds(50, 130, 120, 30);
@@ -56,6 +65,11 @@ public class firefliesGUI extends JFrame implements ActionListener {
         InfectedBtn.setForeground(Color.WHITE);
         InfectedBtn.setBackground(Color.RED);
         add(InfectedBtn);
+
+        //Custom Cursor 
+        Image cursorImageInfected = new ImageIcon(getClass().getResource("/images/Ellie.png")).getImage();
+        Cursor customCursorInf = Toolkit.getDefaultToolkit().createCustomCursor(cursorImageInfected, new Point(0,0),"cursorImageInfected");
+        InfectedBtn.setCursor(customCursorInf);
 
         // Initialize table model with column names
         tableModel = new DefaultTableModel(new Object[]{"Name", "Age", "Zone", "Favorite Weapon"}, 0);
